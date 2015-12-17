@@ -1,0 +1,34 @@
+#container {
+	border: 2px;
+	border-style: solid;
+	text-align: center;
+	max-width: 500px;
+	padding: 2%;
+	margin: auto;
+}
+
+.text-line {
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 1px;
+    padding: 3px 10px;
+    text-align: center;
+    width: 60px;
+    color: black;
+}
+
+/*disable tickers */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.percentSym {
+	display: inline;
+}

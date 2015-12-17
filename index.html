@@ -7,8 +7,6 @@
         <link rel="shortcut icon" href="images/favicon.ico">
 
         <link rel="stylesheet" href="css/style.css"
-    
-
     </head>
 
     <body>
@@ -17,21 +15,47 @@
         <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
         <div id='container'>
-            <div id='currentAverageDiv'>
-                <h2>What is your current average?</h2><input id='currentAverge' type="number" step="0.1" placeholder='%'>
+            <div id='dataScreen'>
+                <div id='currentAverageDiv'>
+                    <h2>What is your current average?</h2><input id='currentAverage' class='text-line' type="number" placeholder='%'><p class='percentSym'>%</p>
+                </div>
+                <div id='finalWorthdiv'>
+                    <h2>What is the final worth?</h2><input class='text-line' id='finalWeight' type="number" placeholder='%'><p class='percentSym'>%</p>
+                </div>
+                <div id='roundupDiv'>
+                    <h2>Does the teacher round up?</h2>
+                    <form>
+                        <input type="radio" name="roundUp" value="yes" checked>Yes</input>
+                        <br>
+                        <input type="radio" name="roundUp" value="no">No</input>
+                    </form>
+                </div>
+                <div id='goDiv'>
+                    <button id='goButton'>Go</button>
+                </div>
             </div>
-            <div id='finalWorthdiv'>
-                <h2>What is the final worth?</h2><input id='finalWorth' type="number" placeholder='%'>
-            </div>
-            <div id='roundupDiv'>
-                <h2>Does the teacher round up?</h2><input id='finalWorth' type="number" placeholder='%'>
-            </div>
-
+            <div id='resultsScreen' style='display: none;'>
+                <table style="width:100%">
+                    <tr>
+                        <td>Grade</td>
+                        <td>Minimum Grade on Final</td> 
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>90%</td> 
+                    </tr>
+                    <tr>
+                        <td>A-</td>
+                        <td>60%</td> 
+                    </tr>
+                </table>
+                        </div>
         </div>
 
           
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="js/index.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/main.js"></script>
 
 
 
