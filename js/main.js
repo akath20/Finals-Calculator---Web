@@ -4,9 +4,11 @@ $("#goButton").click(function(){
 
 	//process info
 	var data = {};
-	data['termWeight'] = $('#currentAverage').val();
+	data['termWeight'] = (100 - $('#finalWeight').val());
 	data['finalWeight'] = $('#finalWeight').val();
+	data['currentAverage'] = $('#currentAverage').val();
 	var results = dataAnalysis(data);
+	debugger;
 
 	//hide data screen
     $("#dataScreen").slideUp();
