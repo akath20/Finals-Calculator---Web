@@ -1,10 +1,22 @@
+*  {
+	font-family: 'Rubik', sans-serif;
+ }
+
+
+
+html {
+ height:100%; 
+}
+
+
 #container {
 	border: 2px;
 	border-style: solid;
 	text-align: center;
-	max-width: 500px;
+	/*max-width: 500px;*/
 	padding: 2%;
 	margin: auto;
+
 }
 
 .text-line {
@@ -32,3 +44,45 @@ input[type=number]::-webkit-outer-spin-button {
 .percentSym {
 	display: inline;
 }
+
+/* Navigation */
+.backArrow {
+
+	float: left;
+	width: 15px;
+
+}
+
+/* Footer */
+#footer {
+	width: 100%;
+	height: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+
+#versionDiv {
+	float: right;
+	margin: auto;
+}
+
+#goButton {
+	border-radius: 50px;
+    border: 2px solid #fff;
+    color: white;
+    padding: 10px 20%;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+table {
+	table-layout: fixed;
+}
+
+
+
+
+
+
+

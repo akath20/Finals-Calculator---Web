@@ -10,9 +10,42 @@ var gradesScale = {
 	'D+' : 66.5,
 	'D' : 62.5,
 	'D-' : 59.5,
+	'E': 0,
 }
 
 var gradesArray = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'E'];
+
+
+function gradeAsLetter (value) {
+
+		if (value >= gradesScale['A']) {
+			return 'A';
+		} else if ((gradesScale['A'] > value) && (value >= gradesScale['A-'])) {
+			return 'A-';
+		} else if ((gradesScale['A-'] > value) && (value >= gradesScale['B+'])) {
+			return 'B+';
+		} else if ((gradesScale['B+'] > value) && (value >= gradesScale['B'])) {
+			return 'B';
+		} else if ((gradesScale['B'] > value) && (value >= gradesScale['B-'])) {
+			return 'B-';
+		} else if ((gradesScale['B-'] > value) && (value >= gradesScale['C+'])) {
+			return 'C+';
+		} else if ((gradesScale['C+'] > value) && (value >= gradesScale['C'])) {
+			return 'C';
+		} else if ((gradesScale['C'] > value) && (value >= gradesScale['C-'])) {
+			return 'C-';
+		} else if ((gradesScale['C-'] > value) && (value >= gradesScale['D+'])) {
+			return 'D+';
+		} else if ((gradesScale['D+'] > value) && (value >= gradesScale['D'])) {
+			return 'D';
+		} else if ((gradesScale['D'] > value) && (value >= gradesScale['D-'])) {
+			return 'D-';
+		} else if (gradesScale['D-'] > value) {
+			return 'E';
+		};
+
+}
+
 
 function dataAnalysis (data) {
 
@@ -40,13 +73,17 @@ function dataAnalysis (data) {
 
 		var minGrade = ((gradeAsPercent - lowestPossibleGrade())/finalWeight);
 
+		if (minGrade < 0) {
+			return 0;
+		};
+
 		return minGrade;
 
 	}
 
 	function possibleGrades () {
 		
-		debugger;
+
 		var grades = [];
 
 
@@ -58,7 +95,7 @@ function dataAnalysis (data) {
 
 			var data = {
 				'classGrade': gradesArray[(highGradeIndex + xCounter)],
-				'minPossibleGradeOnFinal': minPossGrade(gradesArray[(highGradeIndex + xCounter)]),
+				'minPossibleGradeOnFinal': minPossGrade(gradesArray[(highGradeIndex + xCounter)]).toFixed(1),
 				'minPossibleGradeOnFinalAsLetter': gradeAsLetter(minPossGrade(gradesArray[(highGradeIndex + xCounter)])),
 			}
 
@@ -70,35 +107,7 @@ function dataAnalysis (data) {
 
 	}
 
-	function gradeAsLetter (value) {
-
-		if (value >= gradesScale['A']) {
-			return 'A';
-		} else if ((gradesScale['A'] > value) && (value >= gradesScale['A-'])) {
-			return 'A-';
-		} else if ((gradesScale['A-'] > value) && (value >= gradesScale['B+'])) {
-			return 'B+';
-		} else if ((gradesScale['B+'] > value) && (value >= gradesScale['B'])) {
-			return 'B';
-		} else if ((gradesScale['B'] > value) && (value >= gradesScale['B-'])) {
-			return 'B-';
-		} else if ((gradesScale['B-'] > value) && (value >= gradesScale['C+'])) {
-			return 'C+';
-		} else if ((gradesScale['C+'] > value) && (value >= gradesScale['C'])) {
-			return 'C';
-		} else if ((gradesScale['C'] > value) && (value >= gradesScale['C-'])) {
-			return 'C-';
-		} else if ((gradesScale['C-'] > value) && (value >= gradesScale['D+'])) {
-			return 'D+';
-		} else if ((gradesScale['D+'] > value) && (value >= gradesScale['D'])) {
-			return 'D';
-		} else if ((gradesScale['D'] > value) && (value >= gradesScale['D-'])) {
-			return 'D-';
-		} else if (gradesScale['D-'] > value) {
-			return 'E';
-		}
-
-	}
+	
 
 
 	//main

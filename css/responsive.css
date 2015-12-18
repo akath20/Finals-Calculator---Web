@@ -1,0 +1,10 @@
+@media (min-width:640px) {
+ /* smartphones, iPhone, portrait 480x320 phones */ 
+
+ #container {
+ 	max-width: 500px;
+ }
+
+
+}
+

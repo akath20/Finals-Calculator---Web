@@ -6,7 +6,14 @@
         <title>Finals Calculator</title>
         <link rel="shortcut icon" href="images/favicon.ico">
 
-        <link rel="stylesheet" href="css/style.css"
+        <link href='https://fonts.googleapis.com/css?family=Rubik:400,700italic' rel='stylesheet' type='text/css'>
+        <!--This overpowered theh background color set in the html-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <meta name="viewport" content="initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/extra.css">
+
     </head>
 
     <body>
@@ -15,41 +22,68 @@
         <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
         <div id='container'>
+            <div id='header'>
+                <h1>Finals Calculator</h1>
+                <h3>Developed by: Alex Atwater (@akath20) - V.1.0
+            </div>
             <div id='dataScreen'>
                 <div id='currentAverageDiv'>
-                    <h2>What is your current average?</h2><input id='currentAverage' class='text-line' type="number" placeholder='%'><p class='percentSym'>%</p>
+                    <h2>What is your current average?</h2><input pattern="\d*" id='currentAverage' class='text-line' type="number" placeholder='%'><p class='percentSym' data-toggle="tooltip" title='' data-placement="right">%</p>
                 </div>
                 <div id='finalWorthdiv'>
-                    <h2>What is the final worth?</h2><input class='text-line' id='finalWeight' type="number" placeholder='%'><p class='percentSym'>%</p>
+                    <h2>What is the final worth?</h2><input pattern="\d*" class='text-line' id='finalWeight' type="number" placeholder='%'><p class='percentSym' data-toggle="tooltip" title='' data-placement="right">%</p>
                 </div>
                 <div id='roundupDiv'>
                     <h2>Does the teacher round up?</h2>
-                    <form>
-                        <input type="radio" name="roundUp" value="yes" checked>Yes</input>
-                        <br>
-                        <input type="radio" name="roundUp" value="no">No</input>
-                    </form>
+                    <div class="switch">
+                        <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
+                        <label for="week" class="switch-label switch-label-off">Yes</label>
+                        <input type="radio" class="switch-input" name="view" value="month" id="month">
+                        <label for="month" class="switch-label switch-label-on">No</label>
+                        <span class="switch-selection"></span>
+                    </div>
                 </div>
                 <div id='goDiv'>
-                    <button id='goButton'>Go</button>
+                    <button class='btn' id='goButton'>Go</button>
                 </div>
             </div>
             <div id='resultsScreen' style='display: none;'>
-                <table style="width:100%">
-                    <tr>
-                        <td>Grade</td>
-                        <td>Minimum Grade on Final</td> 
-                    </tr>
-                    <tr>
-                        <td>A</td>
-                        <td>90%</td> 
-                    </tr>
-                    <tr>
-                        <td>A-</td>
-                        <td>60%</td> 
-                    </tr>
-                </table>
-                        </div>
+                <div class='header'>
+                    <img id='resultsBackArrow' class='backArrow' src="images/arrow_back.png">
+                </div>
+                <div id='resultsInfo'>
+                    <table id='resultsTable' style="width:100%">
+                        <tr>
+                            <td>Grade</td>
+                            <td>Minimum Grade on Final</td> 
+                        </tr>
+                        <tr>
+                            <td>A</td>
+                            <td>90%</td> 
+                        </tr>
+                        <tr>
+                            <td>A-</td>
+                            <td>60%</td> 
+                        </tr>
+                    </table>
+                </div>
+                <button id='showGradeScale' style='background-color: transparent;
+    border-color: transparent; margin-top: 10px; outline: none;'><u><span id='gradeScaleButtonText'>Show Grade Scale</span></u></button>
+                <div id='gradeScaleView' style="display: none;">
+                    <table border='1' id='gradeScaleTable' style='width: 100%;'>
+                        <tr>
+                            <td>Letter</td>
+                            <td>%</td> 
+                        </tr>
+                    </table>
+                </div>
+                    
+            </div>
+            <div id='footer'>
+                <div id='versionDiv'>
+                    
+                </div>
+            </div>
         </div>
 
           
