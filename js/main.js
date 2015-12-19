@@ -138,6 +138,7 @@ function buildGradeScaleTable() {
 		letterHeader.innerHTML = 'Letter';
 		letterHeader.style.width = '12%';
 		letterHeader.style.minWidth = '67px;';
+		$(letterHeader).addClass('tableHeader');
 		//format
 
 
@@ -154,6 +155,7 @@ function buildGradeScaleTable() {
 		//header
 		var percentHeader = percentRow.insertCell(0);
 		percentHeader.innerHTML = '%';
+		$(percentHeader).addClass('tableHeader');
 
 
 
@@ -222,7 +224,13 @@ function buildResultsScreen(data) {
 		
 		if (row.rowIndex == 0) {
 			//if header
+			//no align
 			cell1.innerHTML = firstCol;
+
+			//apply style
+			
+			$(row).addClass('tableHeader');
+
 		} else {
 			cell1.innerHTML = '<p class="tableAlign">' + firstCol + '</p>';
 		};
