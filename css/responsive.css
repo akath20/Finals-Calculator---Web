@@ -5,6 +5,13 @@
  	max-width: 500px;
  }
 
+ 
+
 
 }
 
+@media (max-width: 640px) {
+	#gradeScaleTable {
+ 		min-width: 467px;
+ 	}
+}

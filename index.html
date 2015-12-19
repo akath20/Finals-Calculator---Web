@@ -54,8 +54,8 @@
                 <div id='resultsInfo'>
                     <table id='resultsTable' style="width:100%">
                         <tr>
-                            <td>Grade</td>
-                            <td>Minimum Grade on Final</td> 
+                            <th>Grade</th>
+                            <th>Minimum Grade on Final</th> 
                         </tr>
                         <tr>
                             <td>A</td>
@@ -70,12 +70,20 @@
                 <button id='showGradeScale' style='background-color: transparent;
     border-color: transparent; margin-top: 10px; outline: none;'><u><span id='gradeScaleButtonText'>Show Grade Scale</span></u></button>
                 <div id='gradeScaleView' style="display: none;">
-                    <table border='1' id='gradeScaleTable' style='width: 100%;'>
-                        <tr>
-                            <td>Letter</td>
-                            <td>%</td> 
-                        </tr>
-                    </table>
+                    <div id='changeScaleView'>
+                        <button class='incrementButton' id='minusButton' style='padding-left: 12px; padding-right: 12px;'>-</button>
+                        <p style='margin: auto;' id='incrementText' style='width: 50px;'>0.0</p>
+                        <button class='incrementButton' id='plusButton'>+</button>
+                    </div>
+                    <div id='gradeScaleTableDiv'>
+                        <table border='1' id='gradeScaleTable' style='width: 100%;'>
+                            <tr>
+                                <td>Letter</td>
+                                <td>%</td> 
+                            </tr>
+                        </table>
+                    </div>
+                    
                 </div>
                     
             </div>

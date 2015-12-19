@@ -80,6 +80,46 @@ table {
 	table-layout: fixed;
 }
 
+.tableAlign {
+	text-align: left;
+	width: 23px;
+	margin: auto;
+}
+
+#gradeScaleTable {
+
+}
+
+#gradeScaleTableDiv {
+	overflow-x: scroll;
+}
+
+#gradeScaleTable td {
+	min-width: 32px;
+}
+
+/* Change Scale View */
+
+#changeScaleView {
+	display: inline-flex;
+
+}
+
+.incrementButton {
+	background-color: transparent;
+    border-color: lightgray;
+    border-radius: 100px;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 2rem;
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
 
 
 
