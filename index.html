@@ -7,12 +7,23 @@
         <link rel="shortcut icon" href="images/favicon.ico">
 
         <link href='https://fonts.googleapis.com/css?family=Rubik:400,700italic' rel='stylesheet' type='text/css'>
-        <!--This overpowered theh background color set in the html-->
+        <!--This overpowered the background color set in the html-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <meta name="viewport" content="initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/extra.css">
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-67862949-2', 'auto');
+            ga('send', 'pageview');
+
+        </script>
 
     </head>
 
@@ -22,9 +33,25 @@
         <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
         <div id='container'>
-            <div id='header'>
-                <h1>Finals Calculator</h1>
-                <h3>Developed by: Alex Atwater (@akath20) - V.1.0
+            <h1>Finals Calculator</h1>
+            <button id='aboutButton' class='moreButton' style='margin-top: 0;'><u><span>About</span></u></button>
+            <div id='header' style='display: none;'>
+                <h3 style='margin-top: 5px;'>Developed by: Alex Atwater - V. 1.0</h3>
+                <table id='aboutTable' style="width:100%" border=1>
+                    <tr class='tableHeader'>
+                        <th>Twitter</th>
+                        <th>LinkedIn</th>
+                        <th>Email</th>
+                        <th>Website</th> 
+                    </tr>
+                    <tr>
+                        <td><a href='http://twitter.com/akath20' target="_blank">@akath20</a></td>
+                        <td><a href='http://linkedin.com/in/akath20' target="_blank">akath20</a></td>
+                        <td style='word-wrap: break-word;'><a href='mailto:akath20developer@gmail.com' target="_blank" title='akath20developer@gmail.com'>akath20developer@gmail.com</a></td>
+                        <td><a href='http://alexatwater.com' target="_blank">Alexatwater.com</a></td>
+                    </tr>
+                </table>
+                
             </div>
             <div id='dataScreen'>
                 <div id='currentAverageDiv'>
@@ -37,7 +64,7 @@
                     <h2>Does the teacher round up?</h2>
                     <div class="switch">
                         <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
-                        <label for="week" class="switch-label switch-label-off">Yes</label>
+                        <label for="week" class="switch-label switch-label-off" id='yesButton'>Yes</label>
                         <input type="radio" class="switch-input" name="view" value="month" id="month">
                         <label for="month" class="switch-label switch-label-on">No</label>
                         <span class="switch-selection"></span>
@@ -68,12 +95,11 @@
                         </tr>
                     </table>
                 </div>
-                <button id='showGradeScale' style='background-color: transparent;
-    border-color: transparent; margin-top: 10px; outline: none;'><u><span id='gradeScaleButtonText'>Show Grade Scale</span></u></button>
+                <button id='showGradeScale' class='moreButton'><u><span id='gradeScaleButtonText'>Show Grade Scale</span></u></button>
                 <div id='gradeScaleView' style="display: none;">
                     <div id='changeScaleView'>
                         <button class='incrementButton' id='minusButton' style='padding-left: 12px; padding-right: 12px;'>-</button>
-                        <p style='margin: auto;' id='incrementText' style='width: 50px;'>0.0</p>
+                        <p style='margin: auto; width: 50px;' id='incrementText'>0.0</p>
                         <button class='incrementButton' id='plusButton'>+</button>
                     </div>
                     <div id='gradeScaleTableDiv'>
@@ -88,17 +114,14 @@
                 </div>
                     
             </div>
-            <div id='footer'>
-                <div id='versionDiv'>
-                    
-                </div>
-            </div>
         </div>
 
           
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="js/data.js"></script>
         <script src="js/main.js"></script>
+
+
 
 
 

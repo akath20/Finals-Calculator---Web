@@ -107,6 +107,10 @@ function dataAnalysis (data) {
 
 	}
 
+	function classGradePercentage() {
+		
+	}
+
 	
 
 

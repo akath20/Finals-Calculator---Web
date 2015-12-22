@@ -1,5 +1,31 @@
 //button functions
 
+//about button
+$("#aboutButton").click(function() {
+
+	//check if open or closed
+	if ($('#header').css('display') == 'none') {
+		//if hidden
+		//show it
+		$('#header').slideDown();
+
+		//change text
+		$('#aboutButton span').text('Hide');
+
+
+	} else {
+		//if showing
+		$('#header').slideUp();
+
+		//change text
+		$('#aboutButton span').text('About');
+
+
+	}
+
+
+});
+
 //increment button clicked 
 $(".incrementButton").click(function() {
 
@@ -9,9 +35,14 @@ $(".incrementButton").click(function() {
 	var incVal = 0.0;
 
 	if (val == '+') {
-		incVal = 0.5;
+		if (!(((parseFloat($('#incrementText').text()))) >= 3)) {
+			incVal = 0.5;
+		}
+		
 	} else {
-		incVal = -0.5;
+		if ((((parseFloat($('#incrementText').text())))) > -3) {
+			incVal = -0.5;
+		}
 	};
 
 	//increment the text
@@ -98,16 +129,33 @@ $("#goButton").click(function(){
 		data['finalWeight'] = $('#finalWeight').val();
 		data['currentAverage'] = $('#currentAverage').val();
 		var results = dataAnalysis(data);
-		
+
+		//check if teacher rounds up
+		if (true) {
+			
+		} else {
+			
+		}
+
 		//build results screen
 		buildResultsScreen(results);
+
+		//build grade scale table again just in case the teacher round was changed
+		buildGradeScaleTable();
 
 		//hide data screen
 	    $("#dataScreen").slideUp();
 
 	    //show results screen
 	    $("#resultsScreen").slideDown();
-	}
+
+		//google analytics
+		//average
+		ga('set', 'metric1', data['currentAverage']);
+		//final weight
+		ga('set', 'metric2', data['finalWeight']);
+
+		}
 
 	
 });
@@ -250,9 +298,11 @@ function buildResultsScreen(data) {
 
 	for (var i = 0; (data.length - 1) >= i; i++) {
 		var object = data[i];
-		var secondCol = (object['minPossibleGradeOnFinal'] + ' (' + object['minPossibleGradeOnFinalAsLetter'] + '%)');
+		var secondCol = (object['minPossibleGradeOnFinal'] + '% (' + object['minPossibleGradeOnFinalAsLetter'] + ')');
 		addTableRow(object['classGrade'], secondCol);
 	};
+
+
 
 
 
