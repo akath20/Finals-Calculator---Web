@@ -45,20 +45,20 @@
                         <th>Website</th> 
                     </tr>
                     <tr>
-                        <td><a href='http://twitter.com/akath20' target="_blank">@akath20</a></td>
-                        <td><a href='http://linkedin.com/in/akath20' target="_blank">akath20</a></td>
-                        <td style='word-wrap: break-word;'><a href='mailto:akath20developer@gmail.com' target="_blank" title='akath20developer@gmail.com'>akath20developer@gmail.com</a></td>
-                        <td><a href='http://alexatwater.com' target="_blank">Alexatwater.com</a></td>
+                        <td><a id='twitterClick' href='http://twitter.com/akath20' target="_blank">@akath20</a></td>
+                        <td><a id='linkedinClick' href='http://linkedin.com/in/akath20' target="_blank">akath20</a></td>
+                        <td style='word-wrap: break-word;'><a id='emailClick' href='mailto:akath20developer@gmail.com' target="_blank" title='akath20developer@gmail.com'>akath20developer@gmail.com</a></td>
+                        <td style='word-wrap: break-word;'><a id='websiteClick' href='http://alexatwater.com' target="_blank">Alexatwater.com</a></td>
                     </tr>
                 </table>
                 
             </div>
             <div id='dataScreen'>
                 <div id='currentAverageDiv'>
-                    <h2>What is your current average?</h2><input pattern="\d*" id='currentAverage' class='text-line' type="number" placeholder='%'><p class='percentSym' data-toggle="tooltip" title='' data-placement="right">%</p>
+                    <h2>What is your current average?</h2><input pattern="\d+(\.\d*)?" id='currentAverage' class='text-line' type="number" placeholder='%'><p class='percentSym' data-toggle="tooltip" title='' data-placement="right">%</p>
                 </div>
                 <div id='finalWorthdiv'>
-                    <h2>What is the final worth?</h2><input pattern="\d*" class='text-line' id='finalWeight' type="number" placeholder='%'><p class='percentSym' data-toggle="tooltip" title='' data-placement="right">%</p>
+                    <h2>What is the final worth?</h2><input pattern="\d+(\.\d*)?" class='text-line' id='finalWeight' type="number" placeholder='%'><p class='percentSym' data-toggle="tooltip" title='' data-placement="right">%</p>
                 </div>
                 <div id='roundupDiv'>
                     <h2>Does the teacher round up?</h2>
@@ -66,7 +66,7 @@
                         <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
                         <label for="week" class="switch-label switch-label-off" id='yesButton'>Yes</label>
                         <input type="radio" class="switch-input" name="view" value="month" id="month">
-                        <label for="month" class="switch-label switch-label-on">No</label>
+                        <label for="month" class="switch-label switch-label-on" id='noButton'>No</label>
                         <span class="switch-selection"></span>
                     </div>
                 </div>

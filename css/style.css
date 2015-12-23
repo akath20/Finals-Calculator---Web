@@ -92,8 +92,8 @@ table {
 }
 
 .tableAlign {
-	text-align: left;
-	width: 23px;
+	text-align: -webkit-center;
+	width: 100px;
 	margin: auto;
 }
 

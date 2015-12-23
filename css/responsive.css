@@ -3,6 +3,16 @@
 
  #container {
  	max-width: 500px;
+
+ }
+}
+
+@media (max-width:800px) {
+ /* smartphones, iPhone, portrait 480x320 phones */ 
+
+ #container {
+ 	padding-bottom: 7%;
+ 	
  }
 }
 

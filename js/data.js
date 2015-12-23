@@ -15,6 +15,43 @@ var gradesScale = {
 
 var gradesArray = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'E'];
 
+function classGradePercentage (average, finalWeight, finalPercent) {
+	
+	finalWeight = (finalWeight/100)
+	var result = ((average * (1 - finalWeight))+(finalPercent * finalWeight));
+	return result.toFixed(1);
+
+}
+
+function modGradeScale (num) {;
+	for (var i = gradesArray.length - 1; i >= 0; i--) {
+		if (!(gradesArray[i] == 'E')) {
+			gradesScale[gradesArray[i]] += num;
+		};
+		
+	};
+}
+
+function teacherScaleUpEnter() {
+	
+	//figure out is teacher scale up is on and set it
+
+	if (!teacherRoundsUp) {
+		modGradeScale(0.5);
+	}
+
+
+}
+
+function teacherScaleUpExit() {
+
+	//if it was true, reset it back for the main screen
+	if (!teacherRoundsUp) {
+		modGradeScale(-0.5);
+	}
+	
+}
+
 
 function gradeAsLetter (value) {
 
@@ -107,9 +144,7 @@ function dataAnalysis (data) {
 
 	}
 
-	function classGradePercentage() {
-		
-	}
+
 
 	
 

@@ -1,7 +1,61 @@
+
+var teacherRoundsUp = true;
+
+//analytics
+$("#twitterClick").click(function() {
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Twitter',
+	  eventAction: 'click',
+	  fieldsObject: {nonInteraction: true}	
+	});
+});
+$("#linkedinClick").click(function() {
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'LinkedIn',
+	  eventAction: 'click',
+	  fieldsObject: {nonInteraction: true}	
+	});
+});
+$("#emailClick").click(function() {
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Email',
+	  eventAction: 'click',
+	  fieldsObject: {nonInteraction: true}	
+	});
+});
+$("#websiteClick").click(function() {
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Website',
+	  eventAction: 'click',
+	  fieldsObject: {nonInteraction: true}	
+	});
+});
+
+
+
 //button functions
+
+
+$("#yesButton").click(function() {
+
+	teacherRoundsUp = true;
+
+});
+
+$("#noButton").click(function() {
+
+	teacherRoundsUp = false;
+
+});
 
 //about button
 $("#aboutButton").click(function() {
+
+	
 
 	//check if open or closed
 	if ($('#header').css('display') == 'none') {
@@ -11,6 +65,14 @@ $("#aboutButton").click(function() {
 
 		//change text
 		$('#aboutButton span').text('Hide');
+
+		//analytics
+		ga('send', {
+		  hitType: 'event',
+		  eventCategory: 'About Button',
+		  eventAction: 'click',
+		  fieldsObject: {nonInteraction: true}	
+		});
 
 
 	} else {
@@ -123,6 +185,11 @@ $("#goButton").click(function(){
 	if (error) {
 		alert(message);
 	} else {
+
+		//check if teacher rounds up
+		teacherScaleUpEnter();
+
+
 		//process info
 		var data = {};
 		data['termWeight'] = (100 - $('#finalWeight').val());
@@ -130,12 +197,7 @@ $("#goButton").click(function(){
 		data['currentAverage'] = $('#currentAverage').val();
 		var results = dataAnalysis(data);
 
-		//check if teacher rounds up
-		if (true) {
-			
-		} else {
-			
-		}
+		
 
 		//build results screen
 		buildResultsScreen(results);
@@ -151,10 +213,9 @@ $("#goButton").click(function(){
 
 		//google analytics
 		//average
-		ga('set', 'metric1', data['currentAverage']);
+		
 		//final weight
-		ga('set', 'metric2', data['finalWeight']);
-
+		
 		}
 
 	
@@ -240,6 +301,7 @@ $("#resultsBackArrow").click(function(){
 
 	//go back to the first screen
 
+	teacherScaleUpExit();
 	//hide results screen
     $("#resultsScreen").slideUp();
 
@@ -298,8 +360,15 @@ function buildResultsScreen(data) {
 
 	for (var i = 0; (data.length - 1) >= i; i++) {
 		var object = data[i];
+ 
+		var termWeight = (100 - $('#finalWeight').val());
+		var finalWeight = $('#finalWeight').val();
+		var currentAverage = $('#currentAverage').val();
+
+
+		var firstCol = (object['classGrade'] + ' (' + classGradePercentage(currentAverage, finalWeight, object['minPossibleGradeOnFinal']) + '%)');
 		var secondCol = (object['minPossibleGradeOnFinal'] + '% (' + object['minPossibleGradeOnFinalAsLetter'] + ')');
-		addTableRow(object['classGrade'], secondCol);
+		addTableRow(firstCol, secondCol);
 	};
 
 
